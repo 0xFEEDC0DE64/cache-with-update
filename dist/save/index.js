@@ -3410,7 +3410,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * Copyright (c) Microsoft and contributors. All rights reserved.
  * Licensed under the MIT License. See License.txt in the project root for
  * license information.
- * 
+ *
  * Azure Core LRO SDK for JavaScript - 1.0.4
  */
 
@@ -24468,7 +24468,7 @@ var Credential = /** @class */ (function () {
      */
     Credential.prototype.create = function (
     // tslint:disable-next-line:variable-name
-    _nextPolicy, 
+    _nextPolicy,
     // tslint:disable-next-line:variable-name
     _options) {
         throw new Error("Method should be implemented in children classes.");
@@ -29664,7 +29664,7 @@ var BlobClient = /** @class */ (function (_super) {
                                                 cpkInfo: options.customerProvidedKey
                                             };
                                             return [4 /*yield*/, this.blobContext.download(tslib.__assign({ abortSignal: options.abortSignal }, updatedOptions))];
-                                        case 1: 
+                                        case 1:
                                         // Debug purpose only
                                         // console.log(
                                         //   `Read from internal stream, range: ${
@@ -31748,7 +31748,7 @@ var BlockBlobClient = /** @class */ (function (_super) {
                                         return [2 /*return*/];
                                 }
                             });
-                        }); }, 
+                        }); },
                         // concurrency should set a smaller value than maxConcurrency, which is helpful to
                         // reduce the possibility when a outgoing handler waits for stream data, in
                         // this situation, outgoing handlers are blocked.
@@ -33187,7 +33187,7 @@ var ContainerClient = /** @class */ (function (_super) {
                     case 1:
                         _b.trys.push([1, 3, 4, 5]);
                         return [4 /*yield*/, this.containerContext.create(tslib.__assign(tslib.__assign({}, options), convertTracingToRequestOptionsBase(updatedOptions)))];
-                    case 2: 
+                    case 2:
                     // Spread operator in destructuring assignments,
                     // this will filter out unwanted properties from the response object into result object
                     return [2 /*return*/, _b.sent()];
@@ -47177,8 +47177,8 @@ function run() {
                 return;
             }
             if (utils.isExactKeyMatch(primaryKey, state)) {
-                core.info(`Cache hit occurred on the primary key ${primaryKey}, not saving cache.`);
-                return;
+                core.info(`Cache hit occurred on the primary key ${primaryKey}, updating cache.`);
+                //return;
             }
             const cachePaths = utils.getInputAsArray(constants_1.Inputs.Path, {
                 required: true
@@ -52993,7 +52993,7 @@ function retry(name, method, getStatusCode, maxAttempts = constants_1.DefaultRet
 exports.retry = retry;
 function retryTypedResponse(name, method, maxAttempts = constants_1.DefaultRetryAttempts, delay = constants_1.DefaultRetryDelay) {
     return __awaiter(this, void 0, void 0, function* () {
-        return yield retry(name, method, (response) => response.statusCode, maxAttempts, delay, 
+        return yield retry(name, method, (response) => response.statusCode, maxAttempts, delay,
         // If the error object contains the statusCode property, extract it and return
         // an ITypedResponse<T> so it can be processed by the retry logic.
         (error) => {
@@ -54692,7 +54692,7 @@ var DiagAPI = /** @class */ (function () {
                 // shortcut if logger not set
                 if (!logger)
                     return;
-                return logger[funcName].apply(logger, 
+                return logger[funcName].apply(logger,
                 // work around Function.prototype.apply types
                 // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 arguments);
@@ -58761,7 +58761,7 @@ function createTokenCycler(credential, scopes, tokenCyclerOptions) {
             };
             // Take advantage of promise chaining to insert an assignment to `token`
             // before the refresh can be considered done.
-            refreshWorker = beginRefresh(tryGetAccessToken, options.retryIntervalInMs, 
+            refreshWorker = beginRefresh(tryGetAccessToken, options.retryIntervalInMs,
             // If we don't have a token, then we should timeout immediately
             (_a = token === null || token === void 0 ? void 0 : token.expiresOnTimestamp) !== null && _a !== void 0 ? _a : Date.now())
                 .then(function (_token) {
@@ -59390,7 +59390,7 @@ var ServiceClient = /** @class */ (function () {
      * @param credentials - The credentials used for authentication with the service.
      * @param options - The service client options that govern the behavior of the client.
      */
-    function ServiceClient(credentials, 
+    function ServiceClient(credentials,
     /* eslint-disable-next-line @azure/azure-sdk/ts-naming-options */
     options) {
         var _this = this;
